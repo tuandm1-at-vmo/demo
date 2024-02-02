@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/web-streams-polyfill@2.0.2/dist/ponyfill.min.js"></script>
+<script src="StreamSaver.js"></script>
+
+<main>
+    <h1>
+        <a href="https://github.com/jimmywarting/StreamSaver.js" target="_blank"
+            >StreamSaver.js</a
+        >
+        demo
+    </h1>
+    <input id="url" placeholder="url" />
+    <input id="token" placeholder="bearer token" />
+    <input id="file" placeholder="file name" />
+    <button id="butt">download</button>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("butt").onclick = function () {
+            const url = document.getElementById("url").value;
+            const token = document.getElementById("token").value;
+            const init = {
+                method: "GET",
+                headers: {
+                    Authorization: token ? `Bearer ${token}` : "",
+                },
+            };
+            const filename = document.getElementById("file").value;
+            StreamSaverUtils /* from script.js */.start(url, init, filename);
+        };
+    </script>
+</main>

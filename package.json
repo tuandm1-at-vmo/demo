@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.25"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
